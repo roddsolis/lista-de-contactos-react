@@ -8,10 +8,12 @@ import "../../styles/demo.css";
 export const ContactList = () => {
   const { store, actions } = useContext(Context);
 
+  
+  
   return (
     <div className="container">
       <ul className="list-group">
-        {store.demo.map((item, index) => {
+        {store.agenda.map((item, index) => {
           return (
             <li
               key={index}
@@ -19,10 +21,10 @@ export const ContactList = () => {
             >
               <img src="" alt="" />
               <div className="infoWrapper" style={{ width: "100%" }}>
-                <h6>{store.demo[index].nombre}</h6>
-                <p>{store.demo[index].direccion}</p>
-                <p>{store.demo[index].telefono}</p>
-                <p>{store.demo[index].correo}</p>
+                <h6>{store.agenda[index].full_name}</h6>
+                <p>{store.agenda[index].address}</p>
+                <p>{store.agenda[index].phone}</p>
+                <p>{store.agenda[index].email}</p>
               </div>
               <div className="acciones">
                 <button className="btn btn-danger">Eliminar</button>

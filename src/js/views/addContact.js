@@ -1,21 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+
 
 export const AddContact = () => {
+
+
+  const { store, actions } = useContext(Context);
+
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
 
-  const userData = {
-    nombre: name,
-    direccion: address,
-    telefono: phone,
-    correo: email,
-  };
 
-  const setNewUser = () => {};
+  const addNewContact = {
+    
+      "full_name": name,
+      "email": email,
+      "agenda_slug": "agenda-rodd",
+      "address":address,
+      "phone":phone
+  
+  }
+
+  console.log(addNewContact)
+  
 
   return (
     <>
@@ -24,7 +35,7 @@ export const AddContact = () => {
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Nombre completo</label>
             <input
-              type="email"
+              type="text"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
@@ -39,7 +50,7 @@ export const AddContact = () => {
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Dirección</label>
             <input
-              type="email"
+              type="text"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
@@ -54,7 +65,7 @@ export const AddContact = () => {
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Teléfono</label>
             <input
-              type="email"
+              type="text"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
@@ -83,11 +94,11 @@ export const AddContact = () => {
           <div className="acciones">
             <button
               className="btn btn-primary"
-              onClick={() => console.log("click")}
+              onClick={() => createNewContact()}
             >
               Agregar
             </button>
-            <Link to="/contact-list">
+            <Link to="/">
               <button className="btn btn-secondary">Cancelar</button>
             </Link>
           </div>
