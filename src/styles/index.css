@@ -1,8 +1,26 @@
 /* 
     General Styles
 */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p{
+    margin-bottom: 0px;
+}
+
+.list-group-item{
+    padding: 3em;
+    width: 100%;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3em;
+    gap: 1em;
 }
